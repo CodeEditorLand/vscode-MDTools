@@ -1,34 +1,32 @@
 {
 	"name": "MDTools",
-	"version": "0.0.1",
-	"private": "false",
 	"description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
-	"categories": [
+	"version": "1.0.1",
+	"publisher": "seanmcbreen",
+	"categories":[
 		"Other"
 	],
-	"homepage": "https://github.com/CodeEditorLand/CodeEditorLand#readme",
+	"license":"SEE LICENSE IN LICENSE.txt",
+	"icon": "images/MDToolsIcon.svg",
 	"bugs": {
-		"url": "https://github.com/CodeEditorLand/CodeEditorLand/issues"
+		"url": "https://github.com/Microsoft/vscode-MDTools/issues"
 	},
+	"homepage": "https://github.com/Microsoft/vscode-MDTools/blob/master/README.md",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/CodeEditorLand/CodeEditorLand.git"
+		"url": "https://github.com/Microsoft/vscode-MDTools.git"
 	},
-	"license": "MIT",
-	"author": {
-		"name": "Nikola Hristov",
-		"email": "nikola@nikolahristov.tech",
-		"url": "https://nikolahristov.tech"
+	"galleryBanner" : {
+		"color": "#5c2d91",
+		"theme" : "dark"
 	},
-	"publisher": "playform",
-	"type": "module",
+	"activationEvents": [
+		"onCommand:extension.textFunctions"
+	],
+	"engines": {
+		"vscode": "^1.0.0"
+	},
 	"main": "./out/extension",
-	"scripts": {
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-		"postinstall": "node ./node_modules/vscode/bin/install",
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
-		"vscode:prepublish": "node ./node_modules/vscode/bin/compile"
-	},
 	"contributes": {
 		"commands": [
 			{
@@ -44,27 +42,17 @@
 			}
 		]
 	},
-	"activationEvents": [
-		"onCommand:extension.textFunctions"
-	],
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+	},
 	"dependencies": {
-		"figlet": "1.7.0",
-		"underscore.string": "3.3.6"
+		"underscore.string": "^3.2.2",
+		"figlet": "^1.1.1"
 	},
 	"devDependencies": {
-		"typescript": "5.2.2",
-		"typescript-esbuild": "0.3.1",
-		"vscode": "0.11.0"
-	},
-	"engines": {
-		"vscode": "1.0.0"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"icon": "images/MDToolsIcon.svg",
-	"galleryBanner": {
-		"color": "#5c2d91",
-		"theme": "dark"
+		"vscode": "^0.11.0",
+		"typescript": "^1.8.5"
 	}
 }
