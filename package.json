@@ -24,7 +24,7 @@
 		"onCommand:extension.textFunctions"
 	],
 	"engines": {
-		"vscode": "1.0.0"
+		"vscode": "^1.0.0"
 	},
 	"main": "./out/extension",
 	"contributes": {
@@ -48,11 +48,11 @@
         "postinstall": "node ./node_modules/vscode/bin/install"
 	},
 	"dependencies": {
-		"underscore.string": "3.3.6",
-		"figlet": "1.7.0"
+		"underscore.string": "^3.2.2",
+		"figlet": "^1.1.1"
 	},
 	"devDependencies": {
-		"vscode": "0.11.0",
-		"typescript": "5.2.2"
+		"vscode": "^0.11.0",
+		"typescript": "^1.8.5"
 	}
 }
