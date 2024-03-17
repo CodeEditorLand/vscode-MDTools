@@ -1,22 +1,9 @@
 {
-  "name": "MDTools",
-  "version": "1.0.1",
-  "description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
-  "homepage": "https://github.com/Microsoft/vscode-MDTools/blob/master/README.md",
+  "activationEvents": [
+    "onCommand:extension.textFunctions"
+  ],
   "bugs": {
     "url": "https://github.com/Microsoft/vscode-MDTools/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Microsoft/vscode-MDTools.git"
-  },
-  "license": "SEE LICENSE IN LICENSE.txt",
-  "publisher": "seanmcbreen",
-  "main": "./out/extension",
-  "scripts": {
-    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile"
   },
   "contributes": {
     "commands": [
@@ -33,20 +20,33 @@
       }
     ]
   },
-  "activationEvents": [
-    "onCommand:extension.textFunctions"
-  ],
   "dependencies": {
-    "figlet": "^1.1.1",
-    "underscore.string": "^3.2.2"
+    "figlet": "1.1.1",
+    "underscore.string": "3.2.2"
   },
+  "description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
   "devDependencies": {
-    "typescript": "^1.8.5",
-    "vscode": "^0.11.0"
+    "typescript": "1.8.5",
+    "vscode": "0.11.0"
   },
-  "icon": "images/MDToolsIcon.svg",
   "galleryBanner": {
     "color": "#5c2d91",
     "theme": "dark"
-  }
+  },
+  "homepage": "https://github.com/Microsoft/vscode-MDTools/blob/master/README.md",
+  "icon": "images/MDToolsIcon.svg",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "main": "./out/extension",
+  "name": "MDTools",
+  "publisher": "seanmcbreen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/vscode-MDTools.git"
+  },
+  "scripts": {
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile"
+  },
+  "version": "1.0.1"
 }
