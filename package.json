@@ -1,38 +1,36 @@
 {
 	"name": "MDTools",
+	"version": "0.0.1",
+	"private": false,
 	"description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
-	"version": "1.0.1",
-	"publisher": "seanmcbreen",
-	"categories":[
-		"Other"
-	],
-	"license":"SEE LICENSE IN LICENSE.txt",
-	"icon": "images/MDToolsIcon.svg",
+	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
 	"bugs": {
-		"url": "https://github.com/Microsoft/vscode-MDTools/issues"
+		"url": "https://github.com/CodeEditorLand/Foundation/issues"
 	},
-	"homepage": "https://github.com/Microsoft/vscode-MDTools/blob/master/README.md",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Microsoft/vscode-MDTools.git"
+		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
 	},
-	"galleryBanner" : {
-		"color": "#5c2d91",
-		"theme" : "dark"
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Playform",
+		"email": "Hello@Playform.Cloud",
+		"url": "https://playform.cloud"
 	},
-	"activationEvents": [
-		"onCommand:extension.textFunctions"
-	],
-	"engines": {
-		"vscode": "1.0.0"
-	},
+	"type": "module",
 	"main": "./out/extension",
+	"scripts": {
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile"
+	},
 	"contributes": {
 		"commands": [
 			{
 				"command": "extension.textFunctions",
-				"title": "Text Functions",
-				"description": "Text functions on selections"
+				"description": "Text functions on selections",
+				"title": "Text Functions"
 			}
 		],
 		"keybindings": [
@@ -42,17 +40,24 @@
 			}
 		]
 	},
-	"scripts": {
-		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
-	},
+	"activationEvents": [
+		"onCommand:extension.textFunctions"
+	],
 	"dependencies": {
-		"underscore.string": "3.3.6",
-		"figlet": "1.7.0"
+		"figlet": "1.7.0",
+		"underscore.string": "3.3.6"
 	},
 	"devDependencies": {
-		"vscode": "0.11.0",
-		"typescript": "5.4.2"
+		"typescript": "5.4.2",
+		"typescript-esbuild": "latest",
+		"vscode": "0.11.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"icon": "images/MDToolsIcon.svg",
+	"galleryBanner": {
+		"color": "#5c2d91",
+		"theme": "dark"
 	}
 }
