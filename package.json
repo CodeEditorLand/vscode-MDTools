@@ -1,7 +1,30 @@
 {
-	"activationEvents": [
-		"onCommand:extension.textFunctions"
-	],
+	"name": "MDTools",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
+	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
+	"bugs": {
+		"url": "https://github.com/CodeEditorLand/Foundation/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Playform",
+		"email": "Hello@Playform.Cloud",
+		"url": "https://playform.cloud"
+	},
+	"type": "module",
+	"main": "./out/extension",
+	"scripts": {
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile"
+	},
 	"contributes": {
 		"commands": [
 			{
@@ -17,28 +40,24 @@
 			}
 		]
 	},
+	"activationEvents": [
+		"onCommand:extension.textFunctions"
+	],
 	"dependencies": {
 		"figlet": "1.7.0",
 		"underscore.string": "3.3.6"
 	},
-	"description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
 	"devDependencies": {
 		"typescript": "5.4.2",
 		"typescript-esbuild": "0.4.5",
 		"vscode": "0.11.0"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"icon": "images/MDToolsIcon.svg",
 	"galleryBanner": {
 		"color": "#5c2d91",
 		"theme": "dark"
-	},
-	"icon": "images/MDToolsIcon.svg",
-	"main": "./out/extension",
-	"name": "MDTools",
-	"scripts": {
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-		"postinstall": "node ./node_modules/vscode/bin/install",
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
-		"vscode:prepublish": "node ./node_modules/vscode/bin/compile"
-	},
-	"type": "module"
+	}
 }
