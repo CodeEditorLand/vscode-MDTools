@@ -1,38 +1,38 @@
 {
 	"name": "MDTools",
+	"version": "0.0.1",
+	"private": false,
 	"description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
-	"version": "1.0.1",
-	"publisher": "seanmcbreen",
-	"categories":[
-		"Other"
+	"keywords": [
+		"land"
 	],
-	"license":"SEE LICENSE IN LICENSE.txt",
-	"icon": "images/MDToolsIcon.svg",
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandMDTools#readme",
 	"bugs": {
-		"url": "https://github.com/Microsoft/vscode-MDTools/issues"
+		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandMDTools/issues"
 	},
-	"homepage": "https://github.com/Microsoft/vscode-MDTools/blob/master/README.md",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Microsoft/vscode-MDTools.git"
+		"url": "git+HTTPS://github.com/CodeEditorLand/LandMDTools.git"
 	},
-	"galleryBanner" : {
-		"color": "#5c2d91",
-		"theme" : "dark"
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "🌆 — Land —",
+		"email": "Land@PlayForm.Cloud",
+		"url": "HTTPS://Land.PlayForm.Cloud"
 	},
-	"activationEvents": [
-		"onCommand:extension.textFunctions"
-	],
-	"engines": {
-		"vscode": "^1.0.0"
-	},
+	"type": "module",
 	"main": "./out/extension",
+	"scripts": {
+		"Document": "Document 'Source/**/*.ts'",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"prepublishOnly": "Build 'Source/**/*.ts'"
+	},
 	"contributes": {
 		"commands": [
 			{
 				"command": "extension.textFunctions",
-				"title": "Text Functions",
-				"description": "Text functions on selections"
+				"description": "Text functions on selections",
+				"title": "Text Functions"
 			}
 		],
 		"keybindings": [
@@ -42,17 +42,23 @@
 			}
 		]
 	},
-	"scripts": {
-		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
-	},
+	"activationEvents": [
+		"onCommand:extension.textFunctions"
+	],
 	"dependencies": {
-		"underscore.string": "^3.2.2",
-		"figlet": "^1.1.1"
+		"figlet": "^1.1.1",
+		"underscore.string": "^3.2.2"
 	},
 	"devDependencies": {
-		"vscode": "^0.11.0",
-		"typescript": "^1.8.5"
+		"@playform/build": "0.0.7",
+		"@playform/document": "0.0.6"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"icon": "images/MDToolsIcon.svg",
+	"galleryBanner": {
+		"color": "#5c2d91",
+		"theme": "dark"
 	}
 }
