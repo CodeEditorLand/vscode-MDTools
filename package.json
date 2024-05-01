@@ -1,31 +1,14 @@
 {
-	"name": "MDTools",
-	"version": "0.0.1",
-	"private": false,
-	"description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
-	"keywords": [
-		"land"
+	"activationEvents": [
+		"onCommand:extension.textFunctions"
 	],
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandMDTools#readme",
-	"bugs": {
-		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandMDTools/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/LandMDTools.git"
-	},
-	"license": "SEE LICENSE IN LICENSE",
 	"author": {
-		"name": "🌆 — Land —",
 		"email": "Land@PlayForm.Cloud",
+		"name": "🌆 — Land —",
 		"url": "HTTPS://Land.PlayForm.Cloud"
 	},
-	"type": "module",
-	"main": "./out/extension",
-	"scripts": {
-		"Document": "Document 'Source/**/*.ts'",
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-		"prepublishOnly": "Build 'Source/**/*.ts'"
+	"bugs": {
+		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandMDTools/issues"
 	},
 	"contributes": {
 		"commands": [
@@ -42,23 +25,40 @@
 			}
 		]
 	},
-	"activationEvents": [
-		"onCommand:extension.textFunctions"
-	],
 	"dependencies": {
 		"figlet": "1.7.0",
 		"underscore.string": "3.3.6"
 	},
+	"description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
 	"devDependencies": {
 		"@playform/build": "0.0.7",
 		"@playform/document": "0.0.6"
 	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"icon": "images/MDToolsIcon.svg",
 	"galleryBanner": {
 		"color": "#5c2d91",
 		"theme": "dark"
-	}
+	},
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandMDTools#readme",
+	"icon": "images/MDToolsIcon.svg",
+	"keywords": [
+		"land"
+	],
+	"license": "SEE LICENSE IN LICENSE",
+	"main": "./out/extension",
+	"name": "MDTools",
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+HTTPS://github.com/CodeEditorLand/LandMDTools.git"
+	},
+	"scripts": {
+		"Document": "Document 'Source/**/*.ts'",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"prepublishOnly": "Build 'Source/**/*.ts'"
+	},
+	"type": "module",
+	"version": "0.0.1"
 }
