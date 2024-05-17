@@ -1,26 +1,6 @@
 {
 	"name": "MDTools",
-	"version": "0.0.1",
-	"private": false,
 	"description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
-	"keywords": [
-		"land"
-	],
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandMDTools#readme",
-	"bugs": {
-		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandMDTools/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/LandMDTools.git"
-	},
-	"license": "SEE LICENSE IN LICENSE",
-	"author": {
-		"name": "🛬 Land —",
-		"email": "Land@PlayForm.Cloud",
-		"url": "HTTPS://Land.PlayForm.Cloud"
-	},
-	"type": "module",
 	"main": "./out/extension",
 	"scripts": {
 		"Document": "Document 'Source/**/*.ts'",
@@ -50,11 +30,7 @@
 		"underscore.string": "3.3.6"
 	},
 	"devDependencies": {
-		"@playform/build": "0.0.7",
-		"@playform/document": "0.0.6"
-	},
-	"publishConfig": {
-		"access": "public"
+		"@playform/build": "0.0.7"
 	},
 	"icon": "images/MDToolsIcon.svg",
 	"galleryBanner": {
