@@ -18,8 +18,8 @@
 		]
 	},
 	"dependencies": {
-		"figlet": "^1.7.0",
-		"underscore.string": "^3.3.6"
+		"figlet": "1.7.0",
+		"underscore.string": "3.3.6"
 	},
 	"description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
 	"devDependencies": {},
