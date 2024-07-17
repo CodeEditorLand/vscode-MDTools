@@ -24,8 +24,8 @@
 		"onCommand:extension.textFunctions"
 	],
 	"dependencies": {
-		"figlet": "^1.1.1",
-		"underscore.string": "^3.2.2"
+		"figlet": "1.1.1",
+		"underscore.string": "3.2.2"
 	},
 	"devDependencies": {},
 	"icon": "images/MDToolsIcon.svg",
