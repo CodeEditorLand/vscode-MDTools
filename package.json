@@ -1,10 +1,7 @@
 {
-	"name": "MDTools",
-	"description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
-	"main": "./out/extension",
-	"scripts": {
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
-	},
+	"activationEvents": [
+		"onCommand:extension.textFunctions"
+	],
 	"contributes": {
 		"commands": [
 			{
@@ -20,17 +17,20 @@
 			}
 		]
 	},
-	"activationEvents": [
-		"onCommand:extension.textFunctions"
-	],
 	"dependencies": {
 		"figlet": "1.1.1",
 		"underscore.string": "3.2.2"
 	},
+	"description": "Text replacement functions e.g. change case, reverse and ASCII Art for all file types.",
 	"devDependencies": {},
-	"icon": "images/MDToolsIcon.svg",
 	"galleryBanner": {
 		"color": "#5c2d91",
 		"theme": "dark"
+	},
+	"icon": "images/MDToolsIcon.svg",
+	"main": "./out/extension",
+	"name": "MDTools",
+	"scripts": {
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
 	}
 }
