@@ -56,6 +56,7 @@ function processSelection(
 		// itterate through the selections
 		for (var x = 0; x < sel.length; x++) {
 			let txt: string = d.getText(new Range(sel[x].start, sel[x].end));
+
 			if (argsCB.length > 0) {
 				// in the case of figlet the params are test to change and font so this is hard coded
 				// the idea of the array of parameters is to allow for a more general approach in the future
@@ -66,10 +67,12 @@ function processSelection(
 
 			//replace the txt in the current select and work out any range adjustments
 			edit.replace(sel[x], txt);
+
 			let startPos: Position = new Position(
 				sel[x].start.line,
 				sel[x].start.character,
 			);
+
 			let endPos: Position = new Position(
 				sel[x].start.line + txt.split(/\r\n|\r|\n/).length - 1,
 				sel[x].start.character + txt.length,
@@ -86,6 +89,7 @@ function textFunctions() {
 		vscode.window.showInformationMessage(
 			"Open a file first to manipulate text selections",
 		);
+
 		return;
 	}
 
@@ -93,6 +97,7 @@ function textFunctions() {
 		matchOnDescription: true,
 		placeHolder: "What do you want to do to the selection(s)?",
 	};
+
 	var items: QuickPickItem[] = [];
 
 	items.push({ label: "toUpper", description: "Convert [aBc] to [ABC]" });
@@ -136,40 +141,62 @@ function textFunctions() {
 			return;
 		}
 		let e = Window.activeTextEditor;
+
 		let d = e.document;
+
 		let sel = e.selections;
 
 		switch (selection.label) {
 			case "toUpper":
 				toUpper(e, d, sel);
+
 				break;
+
 			case "toLower":
 				toLower(e, d, sel);
+
 				break;
+
 			case "swapCase":
 				processSelection(e, d, sel, us.swapCase, []);
+
 				break;
+
 			case "Titleize":
 				processSelection(e, d, sel, us.titleize, []);
+
 				break;
+
 			case "Clean String":
 				processSelection(e, d, sel, us.clean, []);
+
 				break;
+
 			case "Reverse":
 				processSelection(e, d, sel, us.reverse, []);
+
 				break;
+
 			case "Escape HTML":
 				processSelection(e, d, sel, us.escapeHTML, []);
+
 				break;
+
 			case "UnEscape HTML":
 				processSelection(e, d, sel, us.unescapeHTML, []);
+
 				break;
+
 			case "Camelize":
 				processSelection(e, d, sel, us.camelize, []);
+
 				break;
+
 			case "Slugify":
 				processSelection(e, d, sel, us.slugify, []);
+
 				break;
+
 			case "ASCII Art":
 				// build a full list of the fonts for the drop down
 				items = [];
@@ -188,9 +215,12 @@ function textFunctions() {
 						selection.label,
 					]);
 				});
+
 				break;
+
 			default:
 				console.log("hum this should not have happend - no selection");
+
 				break;
 		}
 	});

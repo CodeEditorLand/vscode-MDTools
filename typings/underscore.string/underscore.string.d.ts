@@ -580,6 +580,7 @@ interface UnderscoreStringStaticExports {
 }
 declare module "underscore.string" {
 	var underscoreString: UnderscoreStringStatic;
+
 	export = underscoreString;
 }
 // TODO interface UnderscoreString extends Underscore<string>
