@@ -18,6 +18,7 @@ import us = require("underscore.string");
 
 export function activate() {
 	console.log('Congratulations, your extension "TextTools" is now active!');
+
 	vscode.commands.registerCommand("extension.textFunctions", textFunctions);
 }
 
@@ -27,6 +28,7 @@ function toUpper(e: TextEditor, d: TextDocument, sel: Selection[]) {
 		// itterate through the selections and convert all text to Upper
 		for (var x = 0; x < sel.length; x++) {
 			let txt: string = d.getText(new Range(sel[x].start, sel[x].end));
+
 			edit.replace(sel[x], txt.toUpperCase());
 		}
 	});
@@ -37,6 +39,7 @@ function toLower(e: TextEditor, d: TextDocument, sel: Selection[]) {
 		// itterate through the selections and convert all text to Lower
 		for (var x = 0; x < sel.length; x++) {
 			let txt: string = d.getText(new Range(sel[x].start, sel[x].end));
+
 			edit.replace(sel[x], txt.toLowerCase());
 		}
 	});
@@ -52,6 +55,7 @@ function processSelection(
 	argsCB,
 ) {
 	var replaceRanges: Selection[] = [];
+
 	e.edit(function (edit) {
 		// itterate through the selections
 		for (var x = 0; x < sel.length; x++) {
@@ -77,9 +81,11 @@ function processSelection(
 				sel[x].start.line + txt.split(/\r\n|\r|\n/).length - 1,
 				sel[x].start.character + txt.length,
 			);
+
 			replaceRanges.push(new Selection(startPos, endPos));
 		}
 	});
+
 	e.selections = replaceRanges;
 }
 
@@ -101,36 +107,46 @@ function textFunctions() {
 	var items: QuickPickItem[] = [];
 
 	items.push({ label: "toUpper", description: "Convert [aBc] to [ABC]" });
+
 	items.push({ label: "toLower", description: "Convert [aBc] to [abc]" });
+
 	items.push({ label: "swapCase", description: "Convert [aBc] to [AbC]" });
+
 	items.push({
 		label: "Titleize",
 		description: "Convert [hello MD tools] to [Hello MD Tools]",
 	});
+
 	items.push({
 		label: "Camelize",
 		description: "Convert [hello MD-tools] to [HelloMDTools]",
 	});
+
 	items.push({
 		label: "Clean String",
 		description: "Convert [hello......world] to [hello world]",
 	});
+
 	items.push({
 		label: "Reverse",
 		description: "Convert [hello world] to [world hello]",
 	});
+
 	items.push({
 		label: "Escape HTML",
 		description: "Convert [<div>hello] to [&lt;div&gt;hello]",
 	});
+
 	items.push({
 		label: "UnEscape HTML",
 		description: "Convert [&lt;div&gt;hello] to [<div>hello]",
 	});
+
 	items.push({
 		label: "Slugify",
 		description: "Convert [txt for an URL] to [txt-for-an-url]",
 	});
+
 	items.push({
 		label: "ASCII Art",
 		description: "Convert [hello] to ASCII Art",
@@ -140,6 +156,7 @@ function textFunctions() {
 		if (!selection) {
 			return;
 		}
+
 		let e = Window.activeTextEditor;
 
 		let d = e.document;
@@ -200,6 +217,7 @@ function textFunctions() {
 			case "ASCII Art":
 				// build a full list of the fonts for the drop down
 				items = [];
+
 				figlet.fontsSync().forEach(function (font) {
 					items.push({
 						label: font,
@@ -211,6 +229,7 @@ function textFunctions() {
 					if (!selection) {
 						return;
 					}
+
 					processSelection(e, d, sel, figlet.textSync, [
 						selection.label,
 					]);

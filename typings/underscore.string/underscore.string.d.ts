@@ -7,6 +7,7 @@
 
 interface UnderscoreStatic {
 	str: UnderscoreStringStatic;
+
 	string: UnderscoreStringStatic;
 }
 

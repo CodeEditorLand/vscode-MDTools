@@ -45,6 +45,7 @@ declare module _ {
 	// Common interface between Arrays and jQuery objects
 	interface List<T> extends Collection<T> {
 		[index: number]: T;
+
 		length: number;
 	}
 
@@ -1504,7 +1505,9 @@ interface UnderscoreStatic {
 	 * @return Callback that can be applied to each element in a collection.
 	 **/
 	iteratee(value: string): Function;
+
 	iteratee(value: Function, context?: any, argCount?: number): Function;
+
 	iteratee(value: Object): Function;
 
 	/**
@@ -1584,6 +1587,7 @@ interface UnderscoreStatic {
 	 * @return Wrapped `obj`.
 	 **/
 	chain<T>(obj: T[]): _Chain<T>;
+
 	chain<T extends {}>(obj: T): _Chain<T>;
 }
 
@@ -2228,7 +2232,9 @@ interface Underscore<T> {
 	 * @see _.pick
 	 **/
 	pick(...keys: any[]): any;
+
 	pick(keys: any[]): any;
+
 	pick(fn: (value: any, key: any, object: any) => any): any;
 
 	/**
@@ -2236,7 +2242,9 @@ interface Underscore<T> {
 	 * @see _.omit
 	 **/
 	omit(...keys: string[]): any;
+
 	omit(keys: string[]): any;
+
 	omit(fn: Function): any;
 
 	/**
@@ -3132,7 +3140,9 @@ interface _Chain<T> {
 	 * @see _.pick
 	 **/
 	pick(...keys: any[]): _Chain<T>;
+
 	pick(keys: any[]): _Chain<T>;
+
 	pick(fn: (value: any, key: any, object: any) => any): _Chain<T>;
 
 	/**
@@ -3140,7 +3150,9 @@ interface _Chain<T> {
 	 * @see _.omit
 	 **/
 	omit(...keys: string[]): _Chain<T>;
+
 	omit(keys: string[]): _Chain<T>;
+
 	omit(iteratee: Function): _Chain<T>;
 
 	/**
